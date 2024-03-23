@@ -2,7 +2,7 @@
 Besediček is a pet project aimed at aiding users in learning new words encountered in their daily lives across various languages. It is a convenient tool for effortlessly expanding vocabulary while navigating through daily routines.
 
 # Project Documentation
-Initial project documentation, including the database model, functionality description, and endpoints, is available in the 'doc' repository. 
+Initial project documentation, including the database model, functionality description, and endpoints, is available in the 'docs' repository. 
 
 # Technology Stack
 Framework: Python-based web framework Django
