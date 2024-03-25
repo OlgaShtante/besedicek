@@ -1,4 +1,4 @@
-# Besedicek
+# Besediček
 Besediček is a pet project aimed at aiding users in learning new words encountered in their daily lives across various languages. It is a convenient tool for effortlessly expanding vocabulary while navigating through daily routines.
 
 # Project Documentation
