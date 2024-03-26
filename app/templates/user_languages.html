@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .native {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    <h2>My Languages</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>Status</th>
+                <th>Native</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Russian</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+
+                 <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Belarusian</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+                 <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Serbian</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+                 <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Slovenian</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+                 <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Italian</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+                 <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+                 <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>German</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+                 <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Greek</td>
+                <td class="status">
+                    {% if active_lang %}
+                     Active
+                    {% endif %}
+                    Inactive
+                </td>
+                <td class="native">
+                    {% if native_lang %}
+                     ✓
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% include 'footer.html' %}
+</body>
+</html>

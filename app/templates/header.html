@@ -1,0 +1,20 @@
+<header style="background-color: #e9ebe6">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+        <div style="display: flex; align-items: center;">
+            <img src="#" alt="LOGO" style="width: 100px; height: auto; margin-right: 10px;">
+            <h2 style="margin: 0;">Besediček</h2>
+        </div>
+        <div style="display: flex; align-items: center;">
+            {% if 'user-languages' not in request.path %}
+            <button style="margin-right: 10px; display: {{ myLanguages_display }};">MY LANGUAGES</button>
+            {% endif %}
+
+            {% if 'user-cards' not in request.path %}
+            <button style="margin-right: 10px; display: {{ myLanguages_display }};">MY CARDS</button>
+            {% endif %}
+
+            <button>LOGOUT</button>
+        </div>
+    </div>
+    <hr style="padding: 0.5px">
+</header>

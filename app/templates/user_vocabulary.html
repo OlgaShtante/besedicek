@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        h2 {
+            padding: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .no-records {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    {% if language %}
+    <h2>My Vocabulary - {{ language }}</h2>
+    {% else %}
+    <h2>My Vocabulary</h2>
+    {% endif %}
+    {% if user_languages %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Word</th>
+                    <th>Note<small>(add translation, comment, or example)</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in user_languages %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.word }}</td>
+                    <td>{{ item.note }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="no-records">
+            <p>No records found.</p>
+        </div>
+    {% endif %}
+    {% include 'pagination.html' %}
+{% include 'footer.html' %}
+</body>
+</html>
