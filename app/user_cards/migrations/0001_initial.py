@@ -9,38 +9,37 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('user_languages', '0001_initial'),
         ('user', '0001_initial'),
-        ('languages', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='UserLanguages',
+            name='UserCard',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('native_lang', models.BooleanField(default=False)),
-                ('active_lang', models.BooleanField(default=False)),
+                ('title', models.CharField(max_length=255)),
+                ('card_status', models.CharField(choices=[('NEW', 'New'), ('IN_PROGRESS', 'In Progress'), ('DONE', 'Done')], default='NEW', max_length=20)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('lang_code', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='languages.languages')),
                 ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='user.user')),
             ],
             options={
-                'db_table': 'user_languages',
+                'db_table': 'user_cards',
             },
         ),
         migrations.CreateModel(
-            name='UserVocabulary',
+            name='UserWordCard',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('word', models.CharField(max_length=100)),
-                ('note', models.TextField(max_length=350)),
+                ('word_status', models.CharField(choices=[('NEW', 'New'), ('IN_PROGRESS', 'In Progress'), ('DONE', 'Done')], default='NEW', max_length=20)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('lang_code', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='user_languages.userlanguages')),
+                ('card_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='user_cards.usercard')),
+                ('user_vocabulary_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='user_languages.uservocabulary')),
             ],
             options={
-                'db_table': 'user_vocabulary',
+                'db_table': 'user_words_in_card',
             },
         ),
     ]

@@ -1,3 +1,14 @@
-<footer style="background-color: #e9ebe6; position: fixed; bottom: 0; width: 100%;text-align: center; border-top: 1px solid lightgrey;">
-    <p>Copyright *</p>
+{% load env_tags %}
+<footer style="background-color: #e9ebe6; position: fixed; bottom: 0; width: 100%; text-align: center; border-top: 1px solid lightgrey; font-family: Arial;">
+    <p><a href="{% get_env 'COPYRIGHT_LINK' %}" style="text-decoration: none; color: black;">Copyright</a>
+        <span id="copyrightSymbol">&copy;</span>
+        <span> </span>
+        <span id="currentYear"></span>
+    </p>
 </footer>
+
+<script>
+    var currentYear = new Date().getFullYear();
+    document.getElementById("currentYear").textContent = currentYear;
+    document.getElementById("copyrightSymbol").innerHTML = "&#169;";
+</script>
